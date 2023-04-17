@@ -28,6 +28,7 @@ jobs:
           echo "{\"version\":\"$GITHUB_REF_NAME\"}" > BuildVersion.json
           mkdir -v -p build/linux
           godot -v --headless --export-release "Linux/X11" build/linux/$EXPORT_NAME.$GITHUB_REF_NAME.x86_64
+          chmod +x build/linux/$EXPORT_NAME.$GITHUB_REF_NAME.x86_64
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
         with:
@@ -77,7 +78,7 @@ jobs:
         run: |
           echo "{\"version\":\"$GITHUB_REF_NAME\"}" > BuildVersion.json
           mkdir -v -p build/mac
-          godot -v --headless --export-release "macOS" build/mac/$EXPORT_NAME.$GITHUB_REF_NAME.zip
+          godot -v --headless --export-release "macOS" build/mac/$EXPORT_NAME.$GITHUB_REF_NAME.app
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
         with:

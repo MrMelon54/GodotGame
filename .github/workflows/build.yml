@@ -78,7 +78,7 @@ jobs:
         run: |
           echo "{\"version\":\"$GITHUB_REF_NAME\"}" > BuildVersion.json
           mkdir -v -p build/mac
-          godot -v --headless --export-release "macOS" build/mac/$EXPORT_NAME.$GITHUB_REF_NAME.app
+          godot -v --headless --export-release "macOS" build/mac/$EXPORT_NAME.$GITHUB_REF_NAME.zip
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
         with:

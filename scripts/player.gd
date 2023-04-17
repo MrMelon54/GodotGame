@@ -17,6 +17,7 @@ func _ready():
 	camera = $Pivot/Camera3D
 	pivot = $Pivot
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	print("Version: ", ProjectSettings.get_setting("version"))
 
 func get_dir():
 	var inputs = Vector2.ZERO
